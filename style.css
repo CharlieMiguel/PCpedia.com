@@ -1,0 +1,336 @@
+        /* RESET Y ESTILOS GLOBALES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        
+        .accent {
+            color: #f59e0b;
+        }
+        
+        /* NAVBAR PC */
+        .navbar-pc {
+            background: #0f172a;
+            color: white;
+            padding: 10px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .top-bar input {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            width: 40%;
+            min-width: 200px;
+        }
+        
+        .dark-mode-toggle {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .component-nav {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 10px 0;
+            scrollbar-width: thin;
+        }
+        
+        .component-nav::-webkit-scrollbar {
+            height: 5px;
+        }
+        
+        .component-nav::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 10px;
+        }
+        
+        .nav-item {
+            background: #1e293b;
+            padding: 8px 16px;
+            border-radius: 20px;
+            white-space: nowrap;
+            transition: all 0.3s;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            background: #3b82f6;
+            transform: translateY(-2px);
+        }
+        
+        /* NAVBAR MÓVIL */
+        .navbar-mobile {
+            display: none;
+            background: #0f172a;
+            padding: 15px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .menu-toggle, .search-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+
+        .mobile-menu {
+            display: none;
+            background: #1e293b;
+            padding: 10px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 10;
+            width: 250px;
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            display: block;
+            transform: translateX(0);
+            position: fixed;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #334155;
+        }
+        .mobile-menu a:hover {
+            text-decoration: underline;
+        }
+        
+        .mobile-menu details {
+            margin-bottom: 10px;
+        }
+        
+        .mobile-menu summary {
+            color: #f59e0b;
+            font-weight: bold;
+            padding: 5px;
+            cursor: pointer;
+        }
+        
+        /* CONTENIDO PRINCIPAL */
+        main {
+            padding: 20px 5%;
+            min-height: 80vh;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            color: #0f172a;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 30px 0;
+            color: #0f172a;
+        }
+        
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .info-card {
+            max-width: 800px;
+            margin: 0 auto;
+            grid-column: 1 / -1;
+        }
+        
+        .component-card {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .card:hover h3, .card:hover h4 {
+            color: white !important;
+        }
+        
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card h3 {
+            color: #3b82f6;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .card h4 {
+            color: #1e293b;
+            margin: 15px 0 8px;
+        }
+        
+        .card ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .card li {
+            margin-bottom: 5px;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .specs-table th, .specs-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .specs-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .dark-mode .specs-table th {
+            background-color: #334155;
+        }
+        
+        /* SECCIONES */
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 20px 5%;
+            text-align: center;
+        }
+        
+        /* MODO OSCURO */
+        .dark-mode {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .section-title,
+        .dark-mode h1 {
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .card {
+            background-color: #1e293b;
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .card h4 {
+            color: #f59e0b;
+        }
+        
+        .dark-mode .specs-table th,
+        .dark-mode .specs-table td {
+            border-color: #475569;
+        }
+
+        /* animacion icono luz */
+        .dark-mode-toggle i {
+            transition: transform 0.3s ease;
+          }
+          .dark-mode-toggle i:hover {
+            transform: scale(1.1);
+          }
+
+
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar-pc {
+                display: none;
+            }
+            
+            .navbar-mobile {
+                display: flex;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+            
+            .card img {
+                height: 150px;
+            }
+            
+            /* Ajuste específico para móviles */
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+        }
